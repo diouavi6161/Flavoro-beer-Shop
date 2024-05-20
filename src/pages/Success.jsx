@@ -17,7 +17,7 @@ const Success = () => {
           <h2 className="text-3xl font-semibold mb-4 text-center">
             Order Successful!
           </h2>
-          <p>Your order has been sucessfully placed</p>
+          <p className="text-center">Thank you for visiting Us</p>
         </div>
       )}
     </div>

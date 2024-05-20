@@ -11,7 +11,9 @@ const BeerCard = ({id,name,price,desc,rating,img, handleToast}) => {
             <h2 >{name}</h2>
             <span className='text-green-500'>₹{price}</span>
         </div>
-         <p className="text-sm font-normal">{desc ? desc.slice(0, 20): 'Description not available'} 
+         <p className="text-sm font-normal">{desc ? (
+    desc.length > 20 ? `${desc.slice(0, 20)}...` : desc
+  ) : 'Description not available'}
          </p>
          <div className="flex justify-between">
             <span className="flex justify-center items-center">
