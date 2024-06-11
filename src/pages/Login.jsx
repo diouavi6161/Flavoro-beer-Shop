@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("https://beer-shop-backend.onrender.com/api/login", { email, password });
+      const res = await axios.post("https://beer-shop-backend-1.onrender.com/api/login", { email, password });
       const data = res.data;
 
       if (res.status === 200) {
