@@ -8,26 +8,26 @@ import axios from "axios";
 import { getCart } from "../helper";
 import { setCart } from "../redux/slices/CartSlice";
 
-const ItemCard = ({ id,price, image, name, quantity ,_id }) => {
+const ItemCard = ({ id,price, image, name, quantity , _id }) => {
   const dispatch = useDispatch();
   const user = useSelector((state)=> state.auth.user)
 
   const removeFromCart = async(id)=>{
-        const res = await axios.delete(`https://beer-shop-backend-1.onrender.com/api/remove-from-cart/${id}`)
+        const res = await axios.delete(`http://localhost:5001/api/remove-from-cart/${id}`)
         const data =  res.data
         toast.success(data.message)
         getCart(user).then((data)=> dispatch(setCart(data.cartItems)))
   }
 
   const incrementQuantity = async (id)=>{
-    const res = await axios.put(`https://beer-shop-backend-1.onrender.com/api/increment-quantity/${id}`)
+    const res = await axios.put(`http://localhost:5001/api/increment-quantity/${id}`)
         const data =  await res.data
         
         getCart(user).then((data)=> dispatch(setCart(data.cartItems)))
   }
 
   const decrementQuantity = async(id)=>{
-    const res = await axios.put(`https://beer-shop-backend-1.onrender.com/api/decrement-quantity/${id}`)
+    const res = await axios.put(`http://localhost:5001/api/decrement-quantity/${id}`)
     const data =  await res.data
 
     getCart(user).then((data)=> dispatch(setCart(data.cartItems)))

@@ -10,7 +10,7 @@ const BeerCard = ({id,name,price,desc,rating,img, handleToast}) => {
   const user = useSelector((state)=>state.auth.user)
 
   const addToCart = async({id,name,img,price,rating,quantity})=>{
-    const res = await axios.post(`https://beer-shop-backend-1.onrender.com/api/add-to-cart/${user._id}`,{
+    const res = await axios.post(`http://localhost:5001/api/add-to-cart/${user._id}`,{
       id,image:img,name,price,rating,quantity,
     })
     const data = await res.data

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 const NavList = ({toggleNav,setToggleNav,auth}) => {
 
     const handleLogout = async ()=>{
-        const res = await axios.get("https://beer-shop-backend-1.onrender.com/api/logout")
+        const res = await axios.get("http://localhost:5001/api/logout")
         const data = await res.data;
         toast.success(data.message)
         window.location.href ="/"

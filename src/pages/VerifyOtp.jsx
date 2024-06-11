@@ -13,7 +13,7 @@ const VerifyOtp = () => {
           e.preventDefault()
           try {
 
-            const res = await axios.put("https://beer-shop-backend-1.onrender.com/api/verify-otp",{
+            const res = await axios.put("http://localhost:5001/api/verify-otp",{
                 otp,
                 newPassword : password
             })
