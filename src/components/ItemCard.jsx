@@ -13,7 +13,7 @@ const ItemCard = ({ id, price, image, name, quantity, _id }) => {
 
   const removeFromCart = async (id) => {
     try {
-      const res = await axios.delete(`https://beer-shop-backend.onrender.com/api/remove-from-cart/${id}`);
+      const res = await axios.delete(`https://beer-shop-backend-1.onrender.com/api/remove-from-cart/${id}`);
       const data = res.data;
       toast.success(data.message);
       const cartData = await getCart(user);
@@ -26,7 +26,7 @@ const ItemCard = ({ id, price, image, name, quantity, _id }) => {
 
   const incrementQuantity = async (id) => {
     try {
-      const res = await axios.put(`https://beer-shop-backend.onrender.com/api/increment-quantity/${id}`);
+      const res = await axios.put(`https://beer-shop-backend-1.onrender.com/api/increment-quantity/${id}`);
       const data = await res.data;
       const cartData = await getCart(user);
       dispatch(setCart(cartData.cartItems));
@@ -38,7 +38,7 @@ const ItemCard = ({ id, price, image, name, quantity, _id }) => {
 
   const decrementQuantity = async (id) => {
     try {
-      const res = await axios.put(`https://beer-shop-backend.onrender.com/api/decrement-quantity/${id}`);
+      const res = await axios.put(`https://beer-shop-backend-1.onrender.com/api/decrement-quantity/${id}`);
       const data = await res.data;
       const cartData = await getCart(user);
       dispatch(setCart(cartData.cartItems));
