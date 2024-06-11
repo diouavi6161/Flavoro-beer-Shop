@@ -20,7 +20,7 @@ const Navbar = () => {
   const user = useSelector((state)=> state.auth.user)
 
    const getUser = async()=>{
-    const res = await axios.get("http://localhost:5001/api/get-user",{withCredentials : true,})
+    const res = await axios.get("https://beer-shop-backend.onrender.com/api/get-user",{withCredentials : true,})
 
     const data = await res.data
     dispatch(setUser(data.user))
