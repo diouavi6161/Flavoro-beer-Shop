@@ -1,5 +1,8 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { PropagateLoader } from "react-spinners";
+axios.defaults.withCredentials = true
 
 const Success = () => {
   const [loading, setLoading] = useState(true);
@@ -8,6 +11,16 @@ const Success = () => {
       setLoading(false);
     }, 3000);
   }, []);
+
+  const clearCart = async ()=>{
+    const res = await axios.get("http://localhost:5001/api/clear-cart")
+    const data = await res.data
+    toast.success(data.message)
+  }
+
+  useEffect(()=>{
+      clearCart();
+  },[])
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       {loading ? (
