@@ -8,25 +8,25 @@ import axios from "axios";
 import { getCart } from "../helper";
 import { setCart } from "../redux/slices/CartSlice";
 
-const ItemCard = ({ id, price, image, name, quantity ,_id }) => {
+const ItemCard = ({ id,price, image, name, quantity ,_id }) => {
   const dispatch = useDispatch();
   const user = useSelector((state)=> state.auth.user)
 
-  const removeFromCart = async(_id)=>{
+  const removeFromCart = async(id)=>{
         const res = await axios.delete(`https://beer-shop-backend-1.onrender.com/api/remove-from-cart/${id}`)
         const data =  res.data
         toast.success(data.message)
         getCart(user).then((data)=> dispatch(setCart(data.cartItems)))
   }
 
-  const incrementQuantity = async (_id)=>{
+  const incrementQuantity = async (id)=>{
     const res = await axios.put(`https://beer-shop-backend-1.onrender.com/api/increment-quantity/${id}`)
         const data =  await res.data
         
         getCart(user).then((data)=> dispatch(setCart(data.cartItems)))
   }
 
-  const decrementQuantity = async(_id)=>{
+  const decrementQuantity = async(id)=>{
     const res = await axios.put(`https://beer-shop-backend-1.onrender.com/api/decrement-quantity/${id}`)
     const data =  await res.data
 
