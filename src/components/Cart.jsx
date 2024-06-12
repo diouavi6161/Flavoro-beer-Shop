@@ -22,7 +22,7 @@ const Cart = () => {
 
   const navigate = useNavigate();
   const checkout = async () =>{
-    const res = await axios.get("http://localhost:5001/api/checkout")
+    const res = await axios.get("https://beer-shop-backend-3.onrender.com/api/checkout")
     const {url} = await res.data
     window.location.href = url
   }

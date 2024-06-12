@@ -12,7 +12,7 @@ const BeerCard = ({ id, name, price, desc, img, rating, handleToast }) => {
 
   const addToCart = async ({ id, name, img, price, rating, quantity }) => {
     const res = await axios.post(
-      `http://localhost:5001/api/add-to-cart/${user._id}`,
+      `https://beer-shop-backend-3.onrender.com/api/add-to-cart/${user._id}`,
       {
         id,
         image : img,
