@@ -19,8 +19,8 @@ const NavList = ({toggleNav,setToggleNav,auth}) => {
                 <li onClick={handleLogout} className="hover:text-black select-none list-none">Logout</li>
             ):(
                 <div className="flex flex-col">
-                    <Link to="/login" className="hover:text-black select-none">Login</Link>
-                    <Link to="/signup" className="hover:text-black select-none">Signup</Link>
+                    <Link to="/login" className="hover:text-black select-none">Login{" "}</Link>
+                    <Link to="/signup" className="hover:text-black select-none">Signup{" "}</Link>
                 </div>
             )
         }
