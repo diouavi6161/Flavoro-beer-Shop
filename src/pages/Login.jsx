@@ -64,7 +64,7 @@ const Login = () => {
           Forgot Password
         </Link>
         <button type="submit" className="outline-none border rounded-md px-3 py-3 text-white bg-green-500 hover:bg-green-300">
-          Login
+          Login{" "}
         </button>
         <p className="text-xs text-gray-600 flex gap-2 -mt-1">
           <span>Or</span>
